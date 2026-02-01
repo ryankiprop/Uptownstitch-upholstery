@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { branding } from '../config/branding'
+import { useCart } from '../context/CartContext'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const { items } = useCart()
 
   const isActive = (path) => {
     return location.pathname === path
@@ -60,25 +62,23 @@ const Navbar = () => {
               Products
             </Link>
             <Link
-              to="/services"
-              className={`nav-link ${isActive('/services') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
-              onClick={closeMenu}
-            >
-              Services
-            </Link>
-            <Link
-              to="/gallery"
-              className={`nav-link ${isActive('/gallery') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
-              onClick={closeMenu}
-            >
-              Gallery
-            </Link>
-            <Link
               to="/contact"
               className={`nav-link ${isActive('/contact') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
               onClick={closeMenu}
             >
               Contact
+            </Link>
+            <Link
+              to="/cart"
+              className={`nav-link relative ${isActive('/cart') ? 'text-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
+              onClick={closeMenu}
+            >
+              Cart
+              {items.length > 0 && (
+                <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {items.length}
+                </span>
+              )}
             </Link>
           </div>
 
@@ -118,25 +118,18 @@ const Navbar = () => {
                 Products
               </Link>
               <Link
-                to="/services"
-                className={`nav-link-mobile ${isActive('/services') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
-                onClick={closeMenu}
-              >
-                Services
-              </Link>
-              <Link
-                to="/gallery"
-                className={`nav-link-mobile ${isActive('/gallery') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
-                onClick={closeMenu}
-              >
-                Gallery
-              </Link>
-              <Link
                 to="/contact"
                 className={`nav-link-mobile ${isActive('/contact') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
                 onClick={closeMenu}
               >
                 Contact
+              </Link>
+              <Link
+                to="/cart"
+                className={`nav-link-mobile ${isActive('/cart') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
+                onClick={closeMenu}
+              >
+                Cart {items.length > 0 && `(${items.length})`}
               </Link>
             </div>
           </div>

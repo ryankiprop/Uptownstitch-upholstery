@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 import LazyImage from './LazyImage'
 
 const ProductCard = ({ product }) => {
+  const { addItem } = useCart()
   return (
     <div className="card group">
       <div className="relative overflow-hidden h-64">
@@ -43,12 +45,20 @@ const ProductCard = ({ product }) => {
           <span className="text-2xl font-bold text-primary-600">
             ${product.price}
           </span>
-          <Link
-            to={`/products/${product.id}`}
-            className="btn-primary text-sm px-4 py-2"
-          >
-            View Details
-          </Link>
+          <div className="flex gap-2">
+            <button
+              onClick={() => addItem(product)}
+              className="btn-primary text-sm px-4 py-2"
+            >
+              Add to Cart
+            </button>
+            <Link
+              to={`/products/${product.id}`}
+              className="text-sm px-4 py-2 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
+            >
+              Details
+            </Link>
+          </div>
         </div>
       </div>
     </div>

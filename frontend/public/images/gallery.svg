@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="533" viewBox="0 0 800 533">
+  <rect width="100%" height="100%" fill="#fff7ed" />
+  <rect x="60" y="40" width="680" height="360" rx="10" fill="#fff" stroke="#fde68a" stroke-width="4" />
+  <text x="400" y="240" font-size="34" text-anchor="middle" fill="#92400e" font-family="sans-serif">Gallery Image</text>
+  <text x="400" y="290" font-size="18" text-anchor="middle" fill="#7c2d12" font-family="sans-serif">Placeholder</text>
+</svg>

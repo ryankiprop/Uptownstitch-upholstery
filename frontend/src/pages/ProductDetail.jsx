@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import SEO from '../components/SEO'
 import LazyImage from '../components/LazyImage'
 import LoadingSpinner from '../components/LoadingSpinner'
+import { useCart } from '../context/CartContext'
 import { productsAPI } from '../services/api'
 import { branding } from '../config/branding'
 
 const ProductDetail = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
+  const { addItem } = useCart()
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -140,6 +143,10 @@ const ProductDetail = () => {
               {/* Action Buttons */}
               <div className="space-y-4">
                 <button
+                  onClick={() => {
+                    addItem(product)
+                    navigate('/cart')
+                  }}
                   disabled={!product.in_stock}
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ${
                     product.in_stock
@@ -147,7 +154,7 @@ const ProductDetail = () => {
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
-                  {product.in_stock ? 'Order Now' : 'Out of Stock'}
+                  {product.in_stock ? 'Add to Cart' : 'Out of Stock'}
                 </button>
 
                 <Link

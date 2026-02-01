@@ -25,16 +25,16 @@ export const branding = {
   },
   images: {
     defaults: {
-      product: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&auto=format',
-      service: 'https://images.unsplash.com/photo-1616455579102-6be69ae6b5d5?w=400&h=300&fit=crop&auto=format',
-      gallery: 'https://images.unsplash.com/photo-1583837115757-462a8333a09a?w=600&h=400&fit=crop&auto=format',
-      loading: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&blur=10&fit=crop&auto=format',
-      error: 'https://images.unsplash.com/photo-1583837115757-462a8333a09a?w=400&h=300&fit=crop&auto=format&sat=0'
+      product: '/images/product.svg',
+      service: '/images/service.svg',
+      gallery: '/images/gallery.svg',
+      loading: '/images/product.svg',
+      error: '/images/product.svg'
     },
     services: {
-      'Auto Upholstery': 'https://images.unsplash.com/photo-1616455579102-6be69ae6b5d5?w=600&h=400&fit=crop&auto=format',
-      'Furniture Restoration': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&auto=format',
-      'Marine Upholstery': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&auto=format'
+      'Auto Upholstery': '/images/service.svg',
+      'Furniture Restoration': '/images/service.svg',
+      'Marine Upholstery': '/images/service.svg'
     }
   },
   seo: {
