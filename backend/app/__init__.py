@@ -18,10 +18,11 @@ def create_app(config_name='default'):
     
     # Configure CORS with dynamic origins (explicit resources for /api/*)
     cors_origins = app.config.get('CORS_ORIGINS', '*')
+    # Apply CORS to all routes (wildcard) so browser Origin requests receive proper headers
     if isinstance(cors_origins, (list, tuple)):
-        CORS(app, resources={r"/api/*": {"origins": cors_origins}}, supports_credentials=True)
+        CORS(app, resources={r"/*": {"origins": cors_origins}})
     else:
-        CORS(app, resources={r"/api/*": {"origins": cors_origins}}, supports_credentials=True)
+        CORS(app, resources={r"/*": {"origins": cors_origins}})
     
     # Register blueprints
     from app.routes.products import products_bp
