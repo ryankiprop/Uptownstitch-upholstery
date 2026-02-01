@@ -1,0 +1,39 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
+from flask_migrate import Migrate
+from config import config
+
+db = SQLAlchemy()
+migrate = Migrate()
+
+def create_app(config_name='default'):
+    app = Flask(__name__)
+    app.config.from_object(config[config_name])
+    
+    # Initialize extensions
+    db.init_app(app)
+    migrate.init_app(app, db)
+    
+    # Configure CORS with dynamic origins
+    CORS(app, origins=app.config['CORS_ORIGINS'])
+    
+    # Register blueprints
+    from app.routes.products import products_bp
+    from app.routes.services import services_bp
+    from app.routes.gallery import gallery_bp
+    from app.routes.contact import contact_bp
+    from app.routes.admin import admin_bp
+    
+    app.register_blueprint(products_bp, url_prefix='/api')
+    app.register_blueprint(services_bp, url_prefix='/api')
+    app.register_blueprint(gallery_bp, url_prefix='/api')
+    app.register_blueprint(contact_bp, url_prefix='/api')
+    app.register_blueprint(admin_bp, url_prefix='/api')
+    
+    # Health check endpoint
+    @app.route('/health')
+    def health_check():
+        return {'status': 'healthy', 'service': 'uptown-stitch-api'}
+    
+    return app

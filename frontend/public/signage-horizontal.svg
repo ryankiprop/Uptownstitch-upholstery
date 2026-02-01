@@ -1,0 +1,86 @@
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Signage Background -->
+  <rect width="800" height="300" fill="#1a1a1a"/>
+  
+  <!-- Accent Border -->
+  <rect x="10" y="10" width="780" height="280" fill="none" stroke="#d4a574" stroke-width="3"/>
+  
+  <!-- Main Logo Section -->
+  <g transform="translate(400, 100)">
+    <!-- Large Stitch Icon -->
+    <g transform="translate(-150, -50)">
+      <!-- Needle -->
+      <path d="M30 10 L30 90 L25 95 L25 15 Z" fill="#ffffff"/>
+      <circle cx="27.5" cy="12.5" r="4" fill="#d4a574"/>
+      
+      <!-- Stitch Lines -->
+      <path d="M40 20 L70 20 M40 30 L70 30 M40 40 L70 40 M40 50 L70 50 M40 60 L70 60 M40 70 L70 70" 
+            stroke="#d4a574" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- Upholstery seat outline -->
+      <path d="M15 75 Q15 65 25 65 L55 65 Q65 65 65 75 L65 95 Q65 105 55 105 L25 105 Q15 105 15 95 Z" 
+            fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    </g>
+    
+    <!-- Business Name -->
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff" text-anchor="middle">
+      UPTOWN STITCH
+    </text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#d4a574" text-anchor="middle">
+      UPHOLSTERY GUY
+    </text>
+    
+    <!-- Tagline -->
+    <text x="0" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#cccccc" text-anchor="middle">
+      Custom Auto & Furniture Upholstery
+    </text>
+  </g>
+  
+  <!-- Contact Information -->
+  <g transform="translate(50, 220)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#d4a574">
+      CONTACT US
+    </text>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      📞 (555) 123-4567
+    </text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      📍 123 Main St, City, State 12345
+    </text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      🌐 www.uptownstitch.com
+    </text>
+  </g>
+  
+  <!-- Services -->
+  <g transform="translate(500, 220)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#d4a574">
+      SERVICES
+    </text>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      • Auto Upholstery
+    </text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      • Furniture Restoration
+    </text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      • Marine Upholstery
+    </text>
+  </g>
+  
+  <!-- Business Hours -->
+  <g transform="translate(650, 220)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#d4a574">
+      HOURS
+    </text>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      Mon-Fri: 8AM-6PM
+    </text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      Sat: 9AM-4PM
+    </text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+      Sun: Closed
+    </text>
+  </g>
+</svg>

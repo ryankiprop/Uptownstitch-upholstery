@@ -1,0 +1,22 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon-only version for favicon and small uses -->
+  <g id="logo-icon">
+    <!-- Background circle (optional, remove for transparent) -->
+    <!-- <circle cx="32" cy="32" r="30" fill="#1a1a1a"/> -->
+    
+    <!-- Simplified needle and stitch -->
+    <g transform="translate(16, 10)">
+      <!-- Needle -->
+      <path d="M16 4 L16 36 L14 38 L14 6 Z" fill="#1a1a1a"/>
+      <circle cx="15" cy="5" r="1.5" fill="#d4a574"/>
+      
+      <!-- Stitch lines -->
+      <path d="M20 8 L32 8 M20 12 L32 12 M20 16 L32 16 M20 20 L32 20 M20 24 L32 24" 
+            stroke="#d4a574" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <!-- Subtle seat outline -->
+      <path d="M10 28 Q10 24 13 24 L27 24 Q30 24 30 28 L30 36 Q30 40 27 40 L13 40 Q10 40 10 36 Z" 
+            fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.3"/>
+    </g>
+  </g>
+</svg>

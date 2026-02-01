@@ -1,0 +1,42 @@
+<svg width="320" height="80" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background for preview (remove in production) -->
+  <!-- <rect width="320" height="80" fill="#ffffff"/> -->
+  
+  <!-- Logo Group -->
+  <g id="logo">
+    <!-- Stitch Icon -->
+    <g id="stitch-icon" transform="translate(10, 15)">
+      <!-- Needle -->
+      <path d="M15 5 L15 45 L12 48 L12 8 Z" fill="#1a1a1a"/>
+      <circle cx="13.5" cy="6.5" r="2" fill="#d4a574"/>
+      
+      <!-- Thread/Stitch Lines -->
+      <path d="M20 10 L35 10 M20 15 L35 15 M20 20 L35 20 M20 25 L35 25 M20 30 L35 30" 
+            stroke="#d4a574" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- Subtle upholstery seat outline -->
+      <path d="M8 35 Q8 30 12 30 L28 30 Q32 30 32 35 L32 45 Q32 50 28 50 L12 50 Q8 50 8 45 Z" 
+            fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.3"/>
+    </g>
+    
+    <!-- Business Name -->
+    <text x="55" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1a1a1a">
+      UPTOWN STITCH
+    </text>
+    <text x="55" y="52" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#2c3e50">
+      UPHOLSTERY GUY
+    </text>
+    
+    <!-- Tagline -->
+    <text x="55" y="68" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#666666" letter-spacing="0.5">
+      Custom Auto &amp; Furniture Upholstery
+    </text>
+  </g>
+  
+  <!-- Define styles for different variants -->
+  <style>
+    .logo-dark { fill: #ffffff; }
+    .logo-light { fill: #1a1a1a; }
+    .accent { fill: #d4a574; }
+  </style>
+</svg>

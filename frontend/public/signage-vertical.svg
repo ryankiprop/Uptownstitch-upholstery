@@ -1,0 +1,92 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Signage Background -->
+  <rect width="400" height="600" fill="#1a1a1a"/>
+  
+  <!-- Accent Border -->
+  <rect x="10" y="10" width="380" height="580" fill="none" stroke="#d4a574" stroke-width="3"/>
+  
+  <!-- Main Logo Section -->
+  <g transform="translate(200, 150)">
+    <!-- Large Vertical Logo -->
+    <g transform="translate(-60, -80)">
+      <!-- Needle -->
+      <path d="M25 8 L25 72 L22 75 L22 11 Z" fill="#ffffff"/>
+      <circle cx="23.5" cy="9.5" r="3" fill="#d4a574"/>
+      
+      <!-- Stitch Lines -->
+      <path d="M32 16 L50 16 M32 22 L50 22 M32 28 L50 28 M32 34 L50 34 M32 40 L50 40" 
+            stroke="#d4a574" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- Upholstery seat outline -->
+      <path d="M15 60 Q15 52 20 52 L45 52 Q50 52 50 60 L50 70 Q50 78 45 78 L20 78 Q15 78 15 70 Z" 
+            fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    </g>
+    
+    <!-- Business Name (Stacked) -->
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">
+      UPTOWN
+    </text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#d4a574" text-anchor="middle">
+      STITCH
+    </text>
+    
+    <!-- Tagline -->
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#cccccc" text-anchor="middle">
+      Custom Auto & Furniture
+    </text>
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#cccccc" text-anchor="middle">
+      Upholstery
+    </text>
+  </g>
+  
+  <!-- Divider Line -->
+  <line x1="50" y1="250" x2="350" y2="250" stroke="#d4a574" stroke-width="2"/>
+  
+  <!-- Contact Information -->
+  <g transform="translate(200, 300)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#d4a574" text-anchor="middle">
+      CONTACT US
+    </text>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+      📞 (555) 123-4567
+    </text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+      📍 123 Main St
+    </text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+      City, State 12345
+    </text>
+    <text x="0" y="85" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+      🌐 uptownstitch.com
+    </text>
+  </g>
+  
+  <!-- Business Hours -->
+  <g transform="translate(200, 420)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#d4a574" text-anchor="middle">
+      HOURS
+    </text>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+      Mon-Fri: 8AM-6PM
+    </text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+      Saturday: 9AM-4PM
+    </text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+      Sunday: Closed
+    </text>
+  </g>
+  
+  <!-- Services -->
+  <g transform="translate(200, 520)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#d4a574" text-anchor="middle">
+      SERVICES
+    </text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      Auto • Furniture • Marine
+    </text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      Custom Interiors
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vertical logo version -->
+  <g id="logo-vertical">
+    <!-- Centered stitch icon -->
+    <g id="vertical-icon" transform="translate(35, 20)">
+      <!-- Needle -->
+      <path d="M25 8 L25 52 L22 55 L22 11 Z" fill="#1a1a1a"/>
+      <circle cx="23.5" cy="9.5" r="2.5" fill="#d4a574"/>
+      
+      <!-- Stitch lines -->
+      <path d="M32 16 L50 16 M32 22 L50 22 M32 28 L50 28 M32 34 L50 34 M32 40 L50 40" 
+            stroke="#d4a574" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- Upholstery seat outline -->
+      <path d="M15 45 Q15 38 20 38 L45 38 Q50 38 50 45 L50 58 Q50 65 45 65 L20 65 Q15 65 15 58 Z" 
+            fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.3"/>
+    </g>
+    
+    <!-- Text below icon -->
+    <text x="60" y="95" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">
+      UPTOWN
+    </text>
+    <text x="60" y="107" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#2c3e50" text-anchor="middle">
+      STITCH
+    </text>
+  </g>
+</svg>

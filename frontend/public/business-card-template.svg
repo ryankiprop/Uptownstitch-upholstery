@@ -1,0 +1,96 @@
+<svg width="350" height="200" viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Business Card Background -->
+  <rect width="350" height="200" fill="#ffffff"/>
+  
+  <!-- Accent Line -->
+  <rect x="0" y="0" width="5" height="200" fill="#d4a574"/>
+  
+  <!-- Logo Section -->
+  <g transform="translate(20, 20)">
+    <!-- Horizontal Logo -->
+    <g id="business-card-logo">
+      <!-- Compact stitch icon -->
+      <g transform="translate(0, 5)">
+        <!-- Needle -->
+        <path d="M12 3 L12 33 L10 35 L10 5 Z" fill="#1a1a1a"/>
+        <circle cx="11" cy="4" r="1.5" fill="#d4a574"/>
+        
+        <!-- Stitch lines -->
+        <path d="M16 6 L26 6 M16 10 L26 10 M16 14 L26 14 M16 18 L26 18" 
+              stroke="#d4a574" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      
+      <!-- Business Name -->
+      <text x="40" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#1a1a1a">
+        UPTOWN STITCH
+      </text>
+      <text x="40" y="30" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#2c3e50">
+        UPHOLSTERY GUY
+      </text>
+    </g>
+  </g>
+  
+  <!-- Contact Information -->
+  <g transform="translate(20, 80)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#1a1a1a">
+      CONTACT
+    </text>
+    
+    <!-- Phone -->
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      📞 (555) 123-4567
+    </text>
+    
+    <!-- Email -->
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      ✉️ info@uptownstitch.com
+    </text>
+    
+    <!-- Address -->
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      📍 123 Main St, City, State 12345
+    </text>
+    
+    <!-- Website -->
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      🌐 www.uptownstitch.com
+    </text>
+  </g>
+  
+  <!-- Services -->
+  <g transform="translate(200, 80)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#1a1a1a">
+      SERVICES
+    </text>
+    
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      • Auto Upholstery
+    </text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      • Furniture Restoration
+    </text>
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      • Marine Upholstery
+    </text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="9" fill="#666666">
+      • Custom Interiors
+    </text>
+  </g>
+  
+  <!-- Tagline -->
+  <text x="20" y="180" font-family="Arial, sans-serif" font-size="8" font-style="italic" fill="#999999">
+    "Custom Auto & Furniture Upholstery, Done Right"
+  </text>
+  
+  <!-- Social Media Icons (simplified) -->
+  <g transform="translate(280, 160)">
+    <circle cx="0" cy="0" r="8" fill="#1a1a1a" opacity="0.8"/>
+    <text x="0" y="3" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">f</text>
+    
+    <circle cx="20" cy="0" r="8" fill="#1a1a1a" opacity="0.8"/>
+    <text x="20" y="3" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">📷</text>
+    
+    <circle cx="40" cy="0" r="8" fill="#1a1a1a" opacity="0.8"/>
+    <text x="40" y="3" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">𝕏</text>
+  </g>
+</svg>

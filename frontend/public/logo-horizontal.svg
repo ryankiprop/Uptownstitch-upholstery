@@ -1,0 +1,23 @@
+<svg width="280" height="60" viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal logo version -->
+  <g id="logo-horizontal">
+    <!-- Compact stitch icon -->
+    <g id="compact-icon" transform="translate(8, 12)">
+      <!-- Needle -->
+      <path d="M12 3 L12 33 L10 35 L10 5 Z" fill="#1a1a1a"/>
+      <circle cx="11" cy="4" r="1.5" fill="#d4a574"/>
+      
+      <!-- Stitch lines -->
+      <path d="M16 6 L26 6 M16 10 L26 10 M16 14 L26 14 M16 18 L26 18" 
+            stroke="#d4a574" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Text -->
+    <text x="40" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1a1a1a">
+      UPTOWN STITCH
+    </text>
+    <text x="40" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#2c3e50">
+      UPHOLSTERY GUY
+    </text>
+  </g>
+</svg>
