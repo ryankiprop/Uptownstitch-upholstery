@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 import { branding } from '../config/branding'
 
-const LazyImage = ({ 
-  src, 
-  alt, 
-  className = '', 
+const LazyImage = ({
+  src,
+  alt,
+  className = '',
   type = 'default',
-  ...props 
+  ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isInView, setIsInView] = useState(false)
@@ -25,6 +25,28 @@ const LazyImage = ({
       default:
         return branding.images.defaults.loading
     }
+  }
+
+  // Construct full image URL
+  const getImageUrl = (imageSrc) => {
+    if (!imageSrc) return getPlaceholder()
+
+    // If it's already a full URL
+    if (imageSrc.startsWith('http://') || imageSrc.startsWith('https://')) {
+      return imageSrc
+    }
+
+    // Normalize API base: if VITE_API_URL includes an "/api" suffix, strip it
+    const rawApi = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+    const apiBase = rawApi.replace(/\/api\/?$/i, '')
+
+    // If it's a relative path starting with /uploads, prepend backend root (no /api)
+    if (imageSrc.startsWith('/uploads')) {
+      return `${apiBase}${imageSrc}`
+    }
+
+    // Otherwise return as is (local paths like /images/product.svg)
+    return imageSrc
   }
 
   useEffect(() => {
@@ -53,9 +75,9 @@ const LazyImage = ({
     setHasError(true)
   }
 
-  const imageSrc = hasError 
+  const imageSrc = hasError
     ? branding.images.defaults.error
-    : isInView ? src : getPlaceholder()
+    : isInView ? getImageUrl(src) : getPlaceholder()
 
   return (
     <div ref={imgRef} className={`relative overflow-hidden ${className}`}>
