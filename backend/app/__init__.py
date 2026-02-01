@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -17,13 +17,18 @@ def create_app(config_name='default'):
     migrate.init_app(app, db)
     
     # Configure CORS with dynamic origins (explicit resources for /api/*)
-    cors_origins = app.config.get('CORS_ORIGINS', '*')
-    # Apply CORS to all routes (wildcard) so browser Origin requests receive proper headers
-    if isinstance(cors_origins, (list, tuple)):
-        CORS(app, resources={r"/*": {"origins": cors_origins}})
-    else:
-        CORS(app, resources={r"/*": {"origins": cors_origins}})
+    # Manual CORS header injection (Cloudflare/Render doesn't work with Flask-CORS)
+    allowed_origins = app.config.get("CORS_ORIGINS", ["*"])
     
+    @app.after_request
+    def add_cors_headers(response):
+        origin = request.headers.get("Origin", "")
+        if origin in allowed_origins or "*" in allowed_origins:
+            response.headers["Access-Control-Allow-Origin"] = origin if origin else "*"
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+            response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        return response
+
     # Register blueprints
     from app.routes.products import products_bp
     from app.routes.services import services_bp
@@ -55,7 +60,6 @@ def create_app(config_name='default'):
         origin = request.headers.get('Origin')
         cors_origins = app.config.get('CORS_ORIGINS', '*')
         if cors_origins == '*' or origin in (cors_origins if isinstance(cors_origins, (list, tuple)) else [cors_origins]):
-            response.headers['Access-Control-Allow-Origin'] = origin if origin else '*'
-            response.headers['Vary'] = 'Origin'
+            response.headers['Access-Control-Allow-Origin'] = origin if origin else '*'; response.headers['Vary'] = 'Origin'
         return response
     return app
