@@ -47,4 +47,15 @@ def create_app(config_name='default'):
     def uploaded_file(filename):
         return send_from_directory(app.config.get('UPLOAD_FOLDER'), filename)
     
+
+    # Ensure CORS headers are present for browser requests (fallback)
+    from flask import request
+    @app.after_request
+    def add_cors_headers(response):
+        origin = request.headers.get('Origin')
+        cors_origins = app.config.get('CORS_ORIGINS', '*')
+        if cors_origins == '*' or origin in (cors_origins if isinstance(cors_origins, (list, tuple)) else [cors_origins]):
+            response.headers['Access-Control-Allow-Origin'] = origin if origin else '*'
+            response.headers['Vary'] = 'Origin'
+        return response
     return app
