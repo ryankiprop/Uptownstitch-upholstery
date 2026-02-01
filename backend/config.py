@@ -20,7 +20,8 @@ class Config:
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://uptownstitch.com",
-        "https://www.uptownstitch.com"
+        "https://www.uptownstitch.com",
+        "https://uptownstitch-upholstery.vercel.app"
     ]
     
 class DevelopmentConfig(Config):
@@ -35,7 +36,8 @@ class ProductionConfig(Config):
     # In production, override with actual domain
     CORS_ORIGINS = [
         "https://uptownstitch.com",
-        "https://www.uptownstitch.com"
+        "https://www.uptownstitch.com",
+        "https://uptownstitch-upholstery.vercel.app"
     ]
     
 class TestingConfig(Config):
