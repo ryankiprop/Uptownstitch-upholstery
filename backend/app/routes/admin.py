@@ -724,9 +724,8 @@ def seed_database():
 def init_database():
     """Initialize database schema by creating all tables"""
     try:
-        from flask import current_app
-        with current_app.app_context():
-            db.create_all()
+        from app import db
+        db.create_all()
         return jsonify({'message': 'Database schema initialized'}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
