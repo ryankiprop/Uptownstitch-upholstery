@@ -15,14 +15,18 @@ class Config:
     DEBUG = False
     TESTING = False
     
-    # CORS settings
-    CORS_ORIGINS = [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "https://uptownstitch.com",
-        "https://www.uptownstitch.com",
-        "https://uptownstitch-upholstery.vercel.app"
-    ]
+    # CORS settings - read from env or use defaults
+    _cors_env = os.environ.get('CORS_ORIGINS', '')
+    if _cors_env:
+        CORS_ORIGINS = [origin.strip() for origin in _cors_env.split(',')]
+    else:
+        CORS_ORIGINS = [
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+            "https://uptownstitch.com",
+            "https://www.uptownstitch.com",
+            "https://uptownstitch-upholstery.vercel.app"
+        ]
     
 class DevelopmentConfig(Config):
     DEBUG = True
@@ -33,12 +37,16 @@ class DevelopmentConfig(Config):
     
 class ProductionConfig(Config):
     DEBUG = False
-    # In production, override with actual domain
-    CORS_ORIGINS = [
-        "https://uptownstitch.com",
-        "https://www.uptownstitch.com",
-        "https://uptownstitch-upholstery.vercel.app"
-    ]
+    # In production, read from env or use defaults
+    _cors_env = os.environ.get('CORS_ORIGINS', '')
+    if _cors_env:
+        CORS_ORIGINS = [origin.strip() for origin in _cors_env.split(',')]
+    else:
+        CORS_ORIGINS = [
+            "https://uptownstitch.com",
+            "https://www.uptownstitch.com",
+            "https://uptownstitch-upholstery.vercel.app"
+        ]
     
 class TestingConfig(Config):
     TESTING = True
