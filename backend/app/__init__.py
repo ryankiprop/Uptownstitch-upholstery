@@ -16,8 +16,12 @@ def create_app(config_name='default'):
     db.init_app(app)
     migrate.init_app(app, db)
     
-    # Configure CORS with dynamic origins
-    CORS(app, origins=app.config['CORS_ORIGINS'])
+    # Configure CORS with dynamic origins (explicit resources for /api/*)
+    cors_origins = app.config.get('CORS_ORIGINS', '*')
+    if isinstance(cors_origins, (list, tuple)):
+        CORS(app, resources={r"/api/*": {"origins": cors_origins}}, supports_credentials=True)
+    else:
+        CORS(app, resources={r"/api/*": {"origins": cors_origins}}, supports_credentials=True)
     
     # Register blueprints
     from app.routes.products import products_bp
