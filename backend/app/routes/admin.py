@@ -9,6 +9,81 @@ from app.utils.storage import upload_file
 
 admin_bp = Blueprint('admin', __name__)
 
+# Helper to programmatically seed products (idempotent)
+def seed_products():
+    """Create sample products if none exist. Returns number of products created."""
+    try:
+        if Product.query.first():
+            return 0
+
+        products_data = [
+            {
+                'name': 'Custom Seat Upholstery - Premium Leather',
+                'description': 'Complete custom seat upholstery using premium grade leather. Perfect for restoring classic vehicles or upgrading modern interiors.',
+                'price': 899.99,
+                'category': 'Seat Upholstery',
+                'image_url': '/uploads/product_1.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Dashboard Restoration Kit',
+                'description': 'Complete dashboard restoration package including cleaning, repair, and protective coating. Restores original look and feel.',
+                'price': 599.99,
+                'category': 'Dashboard',
+                'image_url': '/uploads/product_2.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Door Panel Upholstery Set',
+                'description': 'Custom door panel upholstery with premium fabrics. Includes installation guidance and high-quality stitching.',
+                'price': 449.99,
+                'category': 'Door Panels',
+                'image_url': '/uploads/product_3.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Headliner Replacement',
+                'description': 'Complete headliner replacement service with professional installation. Choose from various fabric options.',
+                'price': 349.99,
+                'category': 'Headliner',
+                'image_url': '/uploads/product_4.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Custom Console Upholstery',
+                'description': 'Premium console and armrest upholstery for modern comfort and style.',
+                'price': 279.99,
+                'category': 'Console',
+                'image_url': '/uploads/product_5.jpg',
+                'featured': False,
+                'in_stock': True
+            },
+            {
+                'name': 'Carpet Kit - Full Interior',
+                'description': 'Complete interior carpet replacement kit. High-quality materials that match OEM specifications.',
+                'price': 699.99,
+                'category': 'Carpet',
+                'image_url': '/uploads/product_6.jpg',
+                'featured': False,
+                'in_stock': True
+            }
+        ]
+
+        for product_data in products_data:
+            product = Product(**product_data)
+            db.session.add(product)
+
+        db.session.commit()
+        return len(products_data)
+
+    except Exception:
+        db.session.rollback()
+        raise
+
 
 # Product Management
 @admin_bp.route('/admin/products', methods=['POST'])
@@ -343,6 +418,81 @@ def delete_contact_message(message_id):
         return jsonify({'error': str(e)}), 500
 
 admin_bp = Blueprint('admin', __name__)
+
+# Helper to programmatically seed products (idempotent)
+def seed_products():
+    """Create sample products if none exist. Returns number of products created."""
+    try:
+        if Product.query.first():
+            return 0
+
+        products_data = [
+            {
+                'name': 'Custom Seat Upholstery - Premium Leather',
+                'description': 'Complete custom seat upholstery using premium grade leather. Perfect for restoring classic vehicles or upgrading modern interiors.',
+                'price': 899.99,
+                'category': 'Seat Upholstery',
+                'image_url': '/uploads/product_1.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Dashboard Restoration Kit',
+                'description': 'Complete dashboard restoration package including cleaning, repair, and protective coating. Restores original look and feel.',
+                'price': 599.99,
+                'category': 'Dashboard',
+                'image_url': '/uploads/product_2.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Door Panel Upholstery Set',
+                'description': 'Custom door panel upholstery with premium fabrics. Includes installation guidance and high-quality stitching.',
+                'price': 449.99,
+                'category': 'Door Panels',
+                'image_url': '/uploads/product_3.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Headliner Replacement',
+                'description': 'Complete headliner replacement service with professional installation. Choose from various fabric options.',
+                'price': 349.99,
+                'category': 'Headliner',
+                'image_url': '/uploads/product_4.jpg',
+                'featured': True,
+                'in_stock': True
+            },
+            {
+                'name': 'Custom Console Upholstery',
+                'description': 'Premium console and armrest upholstery for modern comfort and style.',
+                'price': 279.99,
+                'category': 'Console',
+                'image_url': '/uploads/product_5.jpg',
+                'featured': False,
+                'in_stock': True
+            },
+            {
+                'name': 'Carpet Kit - Full Interior',
+                'description': 'Complete interior carpet replacement kit. High-quality materials that match OEM specifications.',
+                'price': 699.99,
+                'category': 'Carpet',
+                'image_url': '/uploads/product_6.jpg',
+                'featured': False,
+                'in_stock': True
+            }
+        ]
+
+        for product_data in products_data:
+            product = Product(**product_data)
+            db.session.add(product)
+
+        db.session.commit()
+        return len(products_data)
+
+    except Exception:
+        db.session.rollback()
+        raise
 
 # Product Management
 @admin_bp.route('/admin/products', methods=['POST'])

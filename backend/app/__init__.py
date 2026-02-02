@@ -62,4 +62,18 @@ def create_app(config_name='default'):
         if cors_origins == '*' or origin in (cors_origins if isinstance(cors_origins, (list, tuple)) else [cors_origins]):
             response.headers['Access-Control-Allow-Origin'] = origin if origin else '*'; response.headers['Vary'] = 'Origin'
         return response
+    # Optionally auto-seed database on startup when AUTO_SEED=1
+    try:
+        if os.environ.get('AUTO_SEED','0') == '1':
+            from app.routes.admin import seed_products
+            with app.app_context():
+                try:
+                    created = seed_products()
+                    if created:
+                        app.logger.info(f"AUTO_SEED created {created} products")
+                except Exception as e:
+                    app.logger.error(f"AUTO_SEED failed: {e}")
+    except Exception:
+        pass
+
     return app
