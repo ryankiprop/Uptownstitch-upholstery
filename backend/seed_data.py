@@ -14,7 +14,7 @@ def seed_data():
                 description="Complete custom seat upholstery using premium grade leather. Perfect for restoring classic vehicles or upgrading modern interiors.",
                 price=899.99,
                 category="Seat Upholstery",
-                image_url="https://via.placeholder.com/400x300/8B4513/FFFFFF?text=Custom+Leather+Seats",
+                image_url="https://source.unsplash.com/oUBsRHzWei8/1200x800",
                 in_stock=True,
                 featured=True
             ),
@@ -23,7 +23,7 @@ def seed_data():
                 description="Complete dashboard restoration package including cleaning, repair, and protective coating. Restores original look and feel.",
                 price=349.99,
                 category="Dashboard",
-                image_url="https://via.placeholder.com/400x300/2F4F4F/FFFFFF?text=Dashboard+Restoration",
+                image_url="https://source.unsplash.com/8syAWhHxbf0/1200x800",
                 in_stock=True,
                 featured=True
             ),
@@ -32,7 +32,7 @@ def seed_data():
                 description="Custom door panel upholstery with premium materials. Includes armrests, speaker covers, and trim pieces.",
                 price=449.99,
                 category="Door Panels",
-                image_url="https://via.placeholder.com/400x300/4682B4/FFFFFF?text=Door+Panels",
+                image_url="https://source.unsplash.com/c_SwKUwevu0/1200x800",
                 in_stock=True,
                 featured=False
             ),
@@ -41,7 +41,7 @@ def seed_data():
                 description="Complete headliner replacement with premium fabric. Available in various colors and materials.",
                 price=299.99,
                 category="Headliners",
-                image_url="https://via.placeholder.com/400x300/708090/FFFFFF?text=Headliner+Replacement",
+                image_url="https://source.unsplash.com/ewpuwoLoMvk/1200x800",
                 in_stock=True,
                 featured=False
             ),
@@ -50,7 +50,7 @@ def seed_data():
                 description="Custom center console upholstery with premium materials. Includes storage compartments and cup holders.",
                 price=199.99,
                 category="Consoles",
-                image_url="https://via.placeholder.com/400x300/556B2F/FFFFFF?text=Console+Upholstery",
+                image_url="https://source.unsplash.com/4icreuz-Qv0/1200x800",
                 in_stock=True,
                 featured=False
             ),
@@ -59,7 +59,7 @@ def seed_data():
                 description="Complete carpet replacement kit for full interior. Custom-fit for your vehicle model.",
                 price=599.99,
                 category="Carpet",
-                image_url="https://via.placeholder.com/400x300/8B4513/FFFFFF?text=Full+Carpet+Kit",
+                image_url="https://source.unsplash.com/6q7OewPW6rQ/1200x800",
                 in_stock=True,
                 featured=True
             )

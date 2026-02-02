@@ -20,7 +20,7 @@ def seed_products():
                 'description': 'Complete custom seat upholstery using premium grade leather. Perfect for restoring classic vehicles or upgrading modern interiors.',
                 'price': 899.99,
                 'category': 'Seat Upholstery',
-                'image_url': '/uploads/product_1.jpg',
+                'image_url': 'https://source.unsplash.com/oUBsRHzWei8/1200x800',
                 'featured': True,
                 'in_stock': True
             },
@@ -29,7 +29,7 @@ def seed_products():
                 'description': 'Complete dashboard restoration package including cleaning, repair, and protective coating. Restores original look and feel.',
                 'price': 599.99,
                 'category': 'Dashboard',
-                'image_url': '/uploads/product_2.jpg',
+                'image_url': 'https://source.unsplash.com/8syAWhHxbf0/1200x800',
                 'featured': True,
                 'in_stock': True
             },
@@ -38,7 +38,7 @@ def seed_products():
                 'description': 'Custom door panel upholstery with premium fabrics. Includes installation guidance and high-quality stitching.',
                 'price': 449.99,
                 'category': 'Door Panels',
-                'image_url': '/uploads/product_3.jpg',
+                'image_url': 'https://source.unsplash.com/c_SwKUwevu0/1200x800',
                 'featured': True,
                 'in_stock': True
             },
@@ -47,7 +47,7 @@ def seed_products():
                 'description': 'Complete headliner replacement service with professional installation. Choose from various fabric options.',
                 'price': 349.99,
                 'category': 'Headliner',
-                'image_url': '/uploads/product_4.jpg',
+                'image_url': 'https://source.unsplash.com/ewpuwoLoMvk/1200x800',
                 'featured': True,
                 'in_stock': True
             },
@@ -56,7 +56,7 @@ def seed_products():
                 'description': 'Premium console and armrest upholstery for modern comfort and style.',
                 'price': 279.99,
                 'category': 'Console',
-                'image_url': '/uploads/product_5.jpg',
+                'image_url': 'https://source.unsplash.com/4icreuz-Qv0/1200x800',
                 'featured': False,
                 'in_stock': True
             },
@@ -65,7 +65,7 @@ def seed_products():
                 'description': 'Complete interior carpet replacement kit. High-quality materials that match OEM specifications.',
                 'price': 699.99,
                 'category': 'Carpet',
-                'image_url': '/uploads/product_6.jpg',
+                'image_url': 'https://source.unsplash.com/6q7OewPW6rQ/1200x800',
                 'featured': False,
                 'in_stock': True
             }
