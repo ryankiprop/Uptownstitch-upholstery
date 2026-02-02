@@ -1,0 +1,29 @@
+name: Post-deploy seed
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  seed:
+    name: Run post-deploy seed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Short wait for service startup
+        run: |
+          echo "Waiting 20s for service to start" 
+          sleep 20
+
+      - name: Run post-deploy seed script
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          TRIES: 8
+          SLEEP: 10
+        run: |
+          chmod +x ./scripts/post_deploy_seed.sh
+          bash ./scripts/post_deploy_seed.sh
