@@ -61,5 +61,7 @@ config = {
     'development': DevelopmentConfig,
     'production': ProductionConfig,
     'testing': TestingConfig,
-    'default': DevelopmentConfig
+    # "default" is used when FLASK_CONFIG isn't set (e.g. many hosts set FLASK_ENV instead).
+    # Keep this permissive enough to allow both local dev and the deployed frontend origin.
+    'default': Config
 }

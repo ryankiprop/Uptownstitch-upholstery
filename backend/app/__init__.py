@@ -1,6 +1,5 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
 from flask_migrate import Migrate
 from config import config
 from flask import send_from_directory
@@ -16,17 +15,33 @@ def create_app(config_name='default'):
     db.init_app(app)
     migrate.init_app(app, db)
     
-    # Configure CORS with dynamic origins (explicit resources for /api/*)
-    # Manual CORS header injection (Cloudflare/Render doesn't work with Flask-CORS)
+    # Manual CORS header injection (stable on Render/Vercel).
     allowed_origins = app.config.get("CORS_ORIGINS", ["*"])
-    
+
+    @app.before_request
+    def handle_preflight():
+        if request.method == "OPTIONS":
+            response = make_response("", 204)
+            origin = request.headers.get("Origin", "")
+            if "*" in allowed_origins:
+                response.headers["Access-Control-Allow-Origin"] = origin if origin else "*"
+            elif origin and origin in allowed_origins:
+                response.headers["Access-Control-Allow-Origin"] = origin
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+            response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+            response.headers["Vary"] = "Origin"
+            return response
+
     @app.after_request
     def add_cors_headers(response):
         origin = request.headers.get("Origin", "")
-        if origin in allowed_origins or "*" in allowed_origins:
+        if "*" in allowed_origins:
             response.headers["Access-Control-Allow-Origin"] = origin if origin else "*"
-            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
-            response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        elif origin and origin in allowed_origins:
+            response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        response.headers["Vary"] = "Origin"
         return response
 
     # Register blueprints
@@ -53,15 +68,6 @@ def create_app(config_name='default'):
         return send_from_directory(app.config.get('UPLOAD_FOLDER'), filename)
     
 
-    # Ensure CORS headers are present for browser requests (fallback)
-    from flask import request
-    @app.after_request
-    def add_cors_headers(response):
-        origin = request.headers.get('Origin')
-        cors_origins = app.config.get('CORS_ORIGINS', '*')
-        if cors_origins == '*' or origin in (cors_origins if isinstance(cors_origins, (list, tuple)) else [cors_origins]):
-            response.headers['Access-Control-Allow-Origin'] = origin if origin else '*'; response.headers['Vary'] = 'Origin'
-        return response
     # Optionally auto-seed database on startup when AUTO_SEED=1
     try:
         if os.environ.get('AUTO_SEED','0') == '1':
