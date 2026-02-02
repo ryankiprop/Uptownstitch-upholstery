@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -46,14 +48,10 @@ def create_app(config_name='default'):
 
     # Register blueprints
     from app.routes.products import products_bp
-    from app.routes.services import services_bp
-    from app.routes.gallery import gallery_bp
     from app.routes.contact import contact_bp
     from app.routes.admin import admin_bp
     
     app.register_blueprint(products_bp, url_prefix='/api')
-    app.register_blueprint(services_bp, url_prefix='/api')
-    app.register_blueprint(gallery_bp, url_prefix='/api')
     app.register_blueprint(contact_bp, url_prefix='/api')
     app.register_blueprint(admin_bp, url_prefix='/api')
     

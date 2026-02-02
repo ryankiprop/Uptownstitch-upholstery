@@ -79,7 +79,9 @@ const Checkout = () => {
 
     setLoading(true)
     try {
-      const orderMessage = `Order placed by ${formData.firstName} ${formData.lastName}. Items: ${items.map((i) => `${i.name} (x${i.quantity})`).join(', ')}. Total: $${total.toFixed(2)}`
+      const orderMessage = `Order placed by ${formData.firstName} ${formData.lastName}. Items: ${items
+        .map((i) => `${i.name} (x${i.quantity})`)
+        .join(', ')}. Total: $${total.toFixed(2)}`
       await contactAPI.submit({
         name: `${formData.firstName} ${formData.lastName}`,
         email: formData.email,

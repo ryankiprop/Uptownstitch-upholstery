@@ -1,6 +1,6 @@
 import os
 from app import create_app, db
-from app.models import Product, Service, GalleryItem, ContactMessage
+from app.models import Product, ContactMessage
 
 config_name = os.getenv('FLASK_CONFIG') or os.getenv('FLASK_ENV') or 'default'
 app = create_app(config_name)
@@ -10,8 +10,6 @@ def make_shell_context():
     return {
         'db': db,
         'Product': Product,
-        'Service': Service,
-        'GalleryItem': GalleryItem,
         'ContactMessage': ContactMessage
     }
 

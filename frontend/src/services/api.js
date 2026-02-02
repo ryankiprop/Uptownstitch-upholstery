@@ -1,6 +1,12 @@
 import axios from 'axios'
 
-const API_BASE_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api'
+function normalizeApiBaseUrl(raw) {
+  const trimmed = (raw || '').trim().replace(/\/+$/, '')
+  if (!trimmed) return 'http://localhost:5000/api'
+  return trimmed.endsWith('/api') ? trimmed : `${trimmed}/api`
+}
+
+const API_BASE_URL = normalizeApiBaseUrl(import.meta.env.VITE_API_URL)
 
 // Create axios instance with default configuration
 const api = axios.create({
@@ -33,43 +39,6 @@ export const productsAPI = {
     headers: { Authorization: `Bearer ${token}` }
   }),
   delete: (id, token) => api.delete(`/admin/products/${id}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  }),
-}
-
-// Services API
-export const servicesAPI = {
-  getAll: () => api.get('/services'),
-  getById: (id) => api.get(`/services/${id}`),
-  getFeatured: () => api.get('/services/featured'),
-  
-  // Admin endpoints
-  create: (data, token) => api.post('/admin/services', data, {
-    headers: { Authorization: `Bearer ${token}` }
-  }),
-  update: (id, data, token) => api.put(`/admin/services/${id}`, data, {
-    headers: { Authorization: `Bearer ${token}` }
-  }),
-  delete: (id, token) => api.delete(`/admin/services/${id}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  }),
-}
-
-// Gallery API
-export const galleryAPI = {
-  getAll: (params = {}) => api.get('/gallery', { params }),
-  getById: (id) => api.get(`/gallery/${id}`),
-  getCategories: () => api.get('/gallery/categories'),
-  getFeatured: () => api.get('/gallery/featured'),
-  
-  // Admin endpoints
-  create: (data, token) => api.post('/admin/gallery', data, {
-    headers: { Authorization: `Bearer ${token}` }
-  }),
-  update: (id, data, token) => api.put(`/admin/gallery/${id}`, data, {
-    headers: { Authorization: `Bearer ${token}` }
-  }),
-  delete: (id, token) => api.delete(`/admin/gallery/${id}`, {
     headers: { Authorization: `Bearer ${token}` }
   }),
 }
