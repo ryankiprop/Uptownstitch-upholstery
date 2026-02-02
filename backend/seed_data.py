@@ -1,13 +1,11 @@
 from app import create_app, db
-from app.models import Product, Service, GalleryItem
+from app.models import Product
 
 def seed_data():
     app = create_app()
     with app.app_context():
         # Clear existing data
         Product.query.delete()
-        Service.query.delete()
-        GalleryItem.query.delete()
         
         # Sample Products
         products = [
@@ -67,89 +65,9 @@ def seed_data():
             )
         ]
         
-        # Sample Services
-        services = [
-            Service(
-                title="Complete Interior Restoration",
-                description="Full vehicle interior restoration including seats, dashboard, door panels, headliner, and carpet. We bring your vehicle's interior back to life with attention to detail and quality craftsmanship.",
-                image_url="https://via.placeholder.com/600x400/2F4F4F/FFFFFF?text=Complete+Restoration",
-                featured=True
-            ),
-            Service(
-                title="Custom Seat Design",
-                description="Bespoke seat design and upholstery tailored to your preferences. Choose from premium materials, custom stitching, and personalized designs.",
-                image_url="https://via.placeholder.com/600x400/8B4513/FFFFFF?text=Custom+Seat+Design",
-                featured=True
-            ),
-            Service(
-                title="Classic Car Interior",
-                description="Specialized interior restoration for classic and vintage vehicles. Period-correct materials and techniques to maintain authenticity.",
-                image_url="https://via.placeholder.com/600x400/4682B4/FFFFFF?text=Classic+Car+Interior",
-                featured=False
-            ),
-            Service(
-                title="Marine Upholstery",
-                description="Professional marine upholstery services for boats and yachts. Water-resistant materials and durable construction.",
-                image_url="https://via.placeholder.com/600x400/4682B4/FFFFFF?text=Marine+Upholstery",
-                featured=False
-            )
-        ]
-        
-        # Sample Gallery Items
-        gallery_items = [
-            GalleryItem(
-                title="1967 Chevy Impala Interior Restoration",
-                description="Complete interior restoration of a classic 1967 Chevy Impala with period-correct materials and colors.",
-                image_url="https://via.placeholder.com/600x400/8B4513/FFFFFF?text=1967+Impala+Interior",
-                category="Classic Cars",
-                featured=True
-            ),
-            GalleryItem(
-                title="Modern SUV Luxury Interior",
-                description="Premium leather upgrade for a modern SUV with custom stitching and embroidered logos.",
-                image_url="https://via.placeholder.com/600x400/2F4F4F/FFFFFF?text=Luxury+SUV+Interior",
-                category="Modern Vehicles",
-                featured=True
-            ),
-            GalleryItem(
-                title="Custom Truck Interior",
-                description="Heavy-duty truck interior with durable materials and custom storage solutions.",
-                image_url="https://via.placeholder.com/600x400/556B2F/FFFFFF?text=Custom+Truck+Interior",
-                category="Trucks",
-                featured=False
-            ),
-            GalleryItem(
-                title="Convertible Top Replacement",
-                description="Professional convertible top replacement with premium canvas and waterproof sealing.",
-                image_url="https://via.placeholder.com/600x400/4682B4/FFFFFF?text=Convertible+Top",
-                category="Convertibles",
-                featured=False
-            ),
-            GalleryItem(
-                title="Vintage Dashboard Restoration",
-                description="Meticulous restoration of a vintage dashboard with original gauges and trim.",
-                image_url="https://via.placeholder.com/600x400/708090/FFFFFF?text=Vintage+Dashboard",
-                category="Classic Cars",
-                featured=True
-            ),
-            GalleryItem(
-                title="Custom Racing Seats",
-                description="Professional racing seat installation with custom upholstery and safety harness integration.",
-                image_url="https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Racing+Seats",
-                category="Performance",
-                featured=False
-            )
-        ]
-        
         # Add all data to database
         for product in products:
             db.session.add(product)
-        
-        for service in services:
-            db.session.add(service)
-        
-        for item in gallery_items:
-            db.session.add(item)
         
         db.session.commit()
         print("Sample data seeded successfully!")

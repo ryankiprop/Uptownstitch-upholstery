@@ -120,15 +120,12 @@ VITE_API_URL=http://localhost:5000/api
 ### Public Endpoints
 - `GET /api/products` - Get all products
 - `GET /api/products/:id` - Get specific product
-- `GET /api/services` - Get all services
-- `GET /api/gallery` - Get gallery items
 - `POST /api/contact` - Submit contact form
 
 ### Admin Endpoints (requires Authorization header)
 - `POST /api/admin/products` - Create product
 - `PUT /api/admin/products/:id` - Update product
 - `DELETE /api/admin/products/:id` - Delete product
-- Similar endpoints for services and gallery
 
 ## Deployment
 
