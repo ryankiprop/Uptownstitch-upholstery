@@ -5,14 +5,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-secondary-800 text-white">
-      <div className="container py-12">
+    <footer className="mt-auto glass-nav text-white">
+      <div className="container py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">{branding.site.logo.text}</span>
+              <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                <span className="text-slate-950 font-bold text-lg">{branding.site.logo.text}</span>
               </div>
               <span className="font-bold text-xl">
                 {branding.site.logo.full}
@@ -26,7 +26,7 @@ const Footer = () => {
                 href={branding.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-300 hover:text-primary-300 transition-colors duration-200"
                 aria-label="Facebook"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -37,7 +37,7 @@ const Footer = () => {
                 href={branding.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-300 hover:text-primary-300 transition-colors duration-200"
                 aria-label="Instagram"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary-300 transition-colors duration-200"
                 >
                   Home
                 </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/products"
-                  className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary-300 transition-colors duration-200"
                 >
                   Products
                 </Link>
@@ -72,7 +72,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary-300 transition-colors duration-200"
                 >
                   Contact
                 </Link>
@@ -108,7 +108,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-700 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; {currentYear} {branding.site.name}. All rights reserved.</p>
           <p className="text-sm mt-2">{branding.site.tagline}</p>
         </div>

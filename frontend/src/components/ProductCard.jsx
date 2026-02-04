@@ -42,19 +42,19 @@ const ProductCard = ({ product }) => {
           {product.description}
         </p>
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-primary-600">
+          <span className="text-2xl font-bold text-primary-200">
             ${product.price}
           </span>
           <div className="flex gap-2">
             <button
               onClick={() => addItem(product)}
-              className="btn-primary text-sm px-4 py-2"
+              className="btn-primary text-sm px-4 py-2 bg-primary-500/90 hover:bg-primary-400"
             >
               Add to Cart
             </button>
             <Link
               to={`/products/${product.id}`}
-              className="text-sm px-4 py-2 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
+              className="text-sm px-4 py-2 border border-primary-300 text-primary-100 rounded-lg hover:bg-primary-500/20 transition-colors"
             >
               Details
             </Link>

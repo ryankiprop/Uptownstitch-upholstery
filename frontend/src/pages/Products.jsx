@@ -105,46 +105,48 @@ const Products = () => {
         jsonLd={structuredData}
       />
       
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen py-8">
         <div className="container">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Products
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse our selection of premium upholstery materials, kits, and accessories 
-              for your vehicle restoration projects.
-            </p>
-          </div>
+          <div className="glass-panel px-6 md:px-10 py-8 md:py-10 mb-10">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Our Products
+              </h1>
+              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+                Browse our selection of premium upholstery materials, kits, and accessories 
+                for your vehicle restoration projects.
+              </p>
+            </div>
 
-          {/* Filters */}
-          <div className="mb-8">
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <span className="text-gray-700 font-medium">Filter by category:</span>
-              <button
-                onClick={() => handleCategoryChange('')}
-                className={`px-4 py-2 rounded-lg transition-colors duration-200 ${
-                  filters.category === ''
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-                }`}
-              >
-                All Categories
-              </button>
-              {categories.map((category) => (
+            {/* Filters */}
+            <div className="mt-8">
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <span className="text-gray-100 font-medium">Filter by category:</span>
                 <button
-                  key={category}
-                  onClick={() => handleCategoryChange(category)}
-                  className={`px-4 py-2 rounded-lg transition-colors duration-200 ${
-                    filters.category === category
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+                  onClick={() => handleCategoryChange('')}
+                  className={`px-4 py-2 rounded-full text-sm md:text-base transition-colors duration-200 ${
+                    filters.category === ''
+                      ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
+                      : 'bg-white/10 text-gray-100 hover:bg-white/20 border border-white/20'
                   }`}
                 >
-                  {category}
+                  All Categories
                 </button>
-              ))}
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => handleCategoryChange(category)}
+                    className={`px-4 py-2 rounded-full text-sm md:text-base transition-colors duration-200 ${
+                      filters.category === category
+                        ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
+                        : 'bg-white/10 text-gray-100 hover:bg-white/20 border border-white/20'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -177,23 +179,23 @@ const Products = () => {
 
                   {/* Pagination */}
                   {pagination.pages > 1 && (
-                    <div className="flex justify-center items-center space-x-2">
+                    <div className="glass-panel px-6 py-4 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-lg mx-auto">
                       <button
                         onClick={() => handlePageChange(pagination.current_page - 1)}
                         disabled={pagination.current_page === 1}
-                        className="px-3 py-2 rounded-lg bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-gray-100 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         Previous
                       </button>
                       
-                      <span className="text-gray-600">
+                      <span className="text-gray-100">
                         Page {pagination.current_page} of {pagination.pages}
                       </span>
                       
                       <button
                         onClick={() => handlePageChange(pagination.current_page + 1)}
                         disabled={pagination.current_page === pagination.pages}
-                        className="px-3 py-2 rounded-lg bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-gray-100 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         Next
                       </button>
@@ -201,17 +203,17 @@ const Products = () => {
                   )}
 
                   {/* Results count */}
-                  <div className="text-center mt-8 text-gray-600">
+                  <div className="text-center mt-8 text-gray-200">
                     Showing {products.length} of {pagination.total} products
                   </div>
                 </>
               ) : (
                 <div className="text-center py-12">
-                  <div className="bg-gray-50 rounded-lg p-8 max-w-md mx-auto">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <div className="glass-panel rounded-2xl p-8 max-w-md mx-auto">
+                    <h3 className="text-xl font-semibold text-white mb-2">
                       No products found
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-200">
                       {filters.category 
                         ? `No products found in the "${filters.category}" category.`
                         : 'No products available at the moment.'}
@@ -219,7 +221,7 @@ const Products = () => {
                     {filters.category && (
                       <button
                         onClick={() => handleCategoryChange('')}
-                        className="mt-4 btn-primary"
+                        className="mt-4 btn-primary bg-primary-500/90 hover:bg-primary-400"
                       >
                         Clear Filters
                       </button>

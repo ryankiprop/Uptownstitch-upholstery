@@ -43,15 +43,15 @@ const ProductDetail = () => {
 
   if (error || !product) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="glass-panel max-w-lg w-full text-center px-8 py-10">
+          <h2 className="text-2xl font-bold text-white mb-4">
             Product Not Found
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-200 mb-6">
             {error || 'The product you are looking for does not exist.'}
           </p>
-          <Link to="/products" className="btn-primary">
+          <Link to="/products" className="btn-primary bg-primary-500/90 hover:bg-primary-400">
             Back to Products
           </Link>
         </div>
@@ -60,24 +60,24 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen py-8">
       <div className="container">
         {/* Breadcrumb */}
         <nav className="mb-8">
-          <ol className="flex items-center space-x-2 text-sm text-gray-600">
+          <ol className="flex items-center space-x-2 text-sm text-gray-300">
             <li>
-              <Link to="/" className="hover:text-primary-600">Home</Link>
+              <Link to="/" className="hover:text-primary-300">Home</Link>
             </li>
             <li>/</li>
             <li>
-              <Link to="/products" className="hover:text-primary-600">Products</Link>
+              <Link to="/products" className="hover:text-primary-300">Products</Link>
             </li>
             <li>/</li>
-            <li className="text-gray-900">{product.name}</li>
+            <li className="text-gray-100">{product.name}</li>
           </ol>
         </nav>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="glass-panel rounded-3xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Product Image */}
             <div className="p-8">
@@ -94,22 +94,22 @@ const ProductDetail = () => {
             {/* Product Info */}
             <div className="p-8">
               <div className="mb-4">
-                <span className="inline-block bg-primary-100 text-primary-800 text-sm px-3 py-1 rounded-full">
+                <span className="inline-block bg-primary-500/20 text-primary-100 text-sm px-3 py-1 rounded-full border border-primary-300/40">
                   {product.category}
                 </span>
                 {product.featured && (
-                  <span className="ml-2 inline-block bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">
+                  <span className="ml-2 inline-block bg-amber-400/20 text-amber-100 text-sm px-3 py-1 rounded-full border border-amber-200/40">
                     Featured
                   </span>
                 )}
               </div>
 
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              <h1 className="text-3xl font-bold text-white mb-4">
                 {product.name}
               </h1>
 
               <div className="mb-6">
-                <span className="text-3xl font-bold text-primary-600">
+                <span className="text-3xl font-bold text-primary-200">
                   ${product.price.toFixed(2)}
                 </span>
               </div>
@@ -118,11 +118,11 @@ const ProductDetail = () => {
                 <div className="flex items-center space-x-2">
                   <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                     product.in_stock
-                      ? 'bg-green-100 text-green-800'
-                      : 'bg-red-100 text-red-800'
+                      ? 'bg-emerald-400/15 text-emerald-200 border border-emerald-300/40'
+                      : 'bg-red-400/20 text-red-200 border border-red-300/40'
                   }`}>
                     <span className={`w-2 h-2 rounded-full mr-2 ${
-                      product.in_stock ? 'bg-green-400' : 'bg-red-400'
+                      product.in_stock ? 'bg-emerald-300' : 'bg-red-300'
                     }`}></span>
                     {product.in_stock ? 'In Stock' : 'Out of Stock'}
                   </span>
@@ -131,10 +131,10 @@ const ProductDetail = () => {
 
               {product.description && (
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     Description
                   </h3>
-                  <p className="text-gray-600 leading-relaxed whitespace-pre-wrap">
+                  <p className="text-gray-200 leading-relaxed whitespace-pre-wrap">
                     {product.description}
                   </p>
                 </div>
@@ -150,7 +150,7 @@ const ProductDetail = () => {
                   disabled={!product.in_stock}
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ${
                     product.in_stock
-                      ? 'btn-primary'
+                      ? 'btn-primary bg-primary-500/90 hover:bg-primary-400'
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
@@ -159,32 +159,32 @@ const ProductDetail = () => {
 
                 <Link
                   to="/contact"
-                  className="block w-full text-center py-3 px-6 border border-primary-600 text-primary-600 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors duration-200"
+                  className="block w-full text-center py-3 px-6 border border-white/70 text-white rounded-lg font-semibold hover:bg-white hover:text-primary-700 transition-colors duration-200 bg-white/5"
                 >
                   Get Quote
                 </Link>
               </div>
 
               {/* Product Details */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <h3 className="text-lg font-semibold text-white mb-4">
                   Product Details
                 </h3>
                 <dl className="grid grid-cols-1 gap-4">
                   <div className="flex justify-between">
-                    <dt className="text-gray-600">Category:</dt>
-                    <dd className="font-medium text-gray-900">{product.category}</dd>
+                    <dt className="text-gray-300">Category:</dt>
+                    <dd className="font-medium text-gray-100">{product.category}</dd>
                   </div>
                   <div className="flex justify-between">
-                    <dt className="text-gray-600">Availability:</dt>
-                    <dd className="font-medium text-gray-900">
+                    <dt className="text-gray-300">Availability:</dt>
+                    <dd className="font-medium text-gray-100">
                       {product.in_stock ? 'In Stock' : 'Out of Stock'}
                     </dd>
                   </div>
                   {product.created_at && (
                     <div className="flex justify-between">
-                      <dt className="text-gray-600">Added:</dt>
-                      <dd className="font-medium text-gray-900">
+                        <dt className="text-gray-300">Added:</dt>
+                        <dd className="font-medium text-gray-100">
                         {new Date(product.created_at).toLocaleDateString()}
                       </dd>
                     </div>
@@ -197,7 +197,7 @@ const ProductDetail = () => {
 
         {/* Related Products */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">
             Related Products
           </h2>
           <div className="text-center">

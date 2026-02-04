@@ -86,14 +86,14 @@ const Contact = () => {
         jsonLd={structuredData}
       />
       
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen py-8">
         <div className="container">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Contact Us
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Have a project in mind or need expert advice? Get in touch with our team of upholstery specialists.
             </p>
           </div>
@@ -101,8 +101,8 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="glass-panel p-8 h-full">
+                <h2 className="text-2xl font-bold text-white mb-6">
                   Get in Touch
                 </h2>
                 
@@ -116,9 +116,9 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                      <p className="text-gray-600">{branding.contact.phone}</p>
-                      <p className="text-sm text-gray-500">Mon-Fri: {branding.contact.hours.weekdays}</p>
+                      <h3 className="text-lg font-semibold text-white">Phone</h3>
+                      <p className="text-gray-200">{branding.contact.phone}</p>
+                      <p className="text-sm text-gray-400">Mon-Fri: {branding.contact.hours.weekdays}</p>
                     </div>
                   </div>
 
@@ -131,9 +131,9 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                      <p className="text-gray-600">{branding.contact.email}</p>
-                      <p className="text-sm text-gray-500">24/7 Support</p>
+                      <h3 className="text-lg font-semibold text-white">Email</h3>
+                      <p className="text-gray-200">{branding.contact.email}</p>
+                      <p className="text-sm text-gray-400">24/7 Support</p>
                     </div>
                   </div>
 
@@ -147,18 +147,18 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Location</h3>
-                      <p className="text-gray-600">{branding.contact.address}</p>
+                      <h3 className="text-lg font-semibold text-white">Location</h3>
+                      <p className="text-gray-200">{branding.contact.address}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Business Hours */}
-                <div className="mt-8 pt-8 border-t border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <div className="mt-8 pt-8 border-t border-white/10">
+                  <h3 className="text-lg font-semibold text-white mb-4">
                     Business Hours
                   </h3>
-                  <div className="space-y-2 text-sm">
+                  <div className="space-y-2 text-sm text-gray-200">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Monday - Friday</span>
                       <span className="font-medium">{branding.contact.hours.weekdays}</span>
@@ -178,16 +178,16 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="glass-panel p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">
                   Send Us a Message
                 </h2>
 
                 {submitStatus.message && (
                   <div className={`mb-6 p-4 rounded-lg ${
                     submitStatus.type === 'success'
-                      ? 'bg-green-50 text-green-700 border border-green-200'
-                      : 'bg-red-50 text-red-700 border border-red-200'
+                      ? 'bg-emerald-400/15 text-emerald-100 border border-emerald-300/40'
+                      : 'bg-red-400/20 text-red-100 border border-red-300/40'
                   }`} role="alert">
                     {submitStatus.message}
                   </div>
@@ -196,7 +196,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
                         Name *
                       </label>
                       <input
@@ -212,7 +212,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
                         Email *
                       </label>
                       <input
@@ -230,7 +230,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-200 mb-2">
                       Phone Number
                     </label>
                     <input
@@ -245,7 +245,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-200 mb-2">
                       Subject *
                     </label>
                     <input
@@ -262,7 +262,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
                       Message *
                     </label>
                     <textarea
@@ -281,14 +281,14 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full btn-primary disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    className="w-full btn-primary bg-primary-500/90 hover:bg-primary-400 disabled:bg-gray-500 disabled:cursor-not-allowed"
                     aria-describedby={submitStatus.message ? 'form-status' : undefined}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
 
-                <div className="mt-6 text-center text-sm text-gray-500">
+                <div className="mt-6 text-center text-sm text-gray-400">
                   We respect your privacy and will never share your information. Responses typically within 24 hours.
                 </div>
               </div>

@@ -10,7 +10,13 @@
   }
   
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply text-gray-100;
+    background:
+      radial-gradient(circle at top left, rgba(236, 252, 203, 0.18), transparent 55%),
+      radial-gradient(circle at top right, rgba(254, 249, 195, 0.18), transparent 55%),
+      radial-gradient(circle at bottom, rgba(191, 219, 254, 0.16), transparent 55%),
+      #020617;
+    background-attachment: fixed;
   }
 }
 
@@ -32,11 +38,23 @@
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200;
+    @apply bg-white/10 border border-white/15 rounded-2xl shadow-lg overflow-hidden hover:bg-white/15 hover:shadow-2xl backdrop-blur-xl transition-all duration-300;
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-xl bg-slate-900/60 border-b border-white/10;
+  }
+
+  .glass-panel {
+    @apply bg-white/10 border border-white/15 rounded-3xl backdrop-blur-2xl shadow-xl;
+  }
+
+  .glass-input {
+    @apply bg-white/5 border border-white/20 text-gray-100 placeholder-gray-400 rounded-xl;
   }
   
   .input-field {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200;
+    @apply w-full px-4 py-2 glass-input focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all duration-200;
   }
   
   .text-gradient {

@@ -21,7 +21,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+    <nav className="glass-nav sticky top-0 z-50" role="navigation" aria-label="Main navigation">
       <div className="container">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -36,10 +36,10 @@ const Navbar = () => {
               className="w-10 h-10 group-hover:opacity-80 transition-opacity duration-200"
             />
             <div className="hidden sm:block">
-              <div className="text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
+              <div className="text-sm font-bold text-gray-100 group-hover:text-primary-300 transition-colors duration-200">
                 {branding.site.name}
               </div>
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-gray-400">
                 {branding.site.tagline}
               </div>
             </div>
@@ -49,28 +49,28 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className={`nav-link ${isActive('/') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
+              className={`nav-link ${isActive('/') ? 'text-primary-300 border-b-2 border-primary-300' : 'text-gray-200 hover:text-primary-300'}`}
               onClick={closeMenu}
             >
               Home
             </Link>
             <Link
               to="/products"
-              className={`nav-link ${isActive('/products') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
+              className={`nav-link ${isActive('/products') ? 'text-primary-300 border-b-2 border-primary-300' : 'text-gray-200 hover:text-primary-300'}`}
               onClick={closeMenu}
             >
               Products
             </Link>
             <Link
               to="/contact"
-              className={`nav-link ${isActive('/contact') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
+              className={`nav-link ${isActive('/contact') ? 'text-primary-300 border-b-2 border-primary-300' : 'text-gray-200 hover:text-primary-300'}`}
               onClick={closeMenu}
             >
               Contact
             </Link>
             <Link
               to="/cart"
-              className={`nav-link relative ${isActive('/cart') ? 'text-primary-600' : 'text-gray-700 hover:text-primary-600'}`}
+              className={`nav-link relative ${isActive('/cart') ? 'text-primary-300' : 'text-gray-200 hover:text-primary-300'}`}
               onClick={closeMenu}
             >
               Cart
@@ -85,7 +85,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="md:hidden p-2 rounded-lg text-gray-200 hover:text-primary-300 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400"
             aria-label="Toggle navigation menu"
             aria-expanded={isMenuOpen}
           >
@@ -101,32 +101,48 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-white/10 bg-slate-900/80 backdrop-blur-2xl">
             <div className="flex flex-col space-y-3">
               <Link
                 to="/"
-                className={`nav-link-mobile ${isActive('/') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
+                className={`nav-link-mobile ${
+                  isActive('/')
+                    ? 'text-primary-300 bg-white/10'
+                    : 'text-gray-200 hover:text-primary-300 hover:bg-white/5'
+                }`}
                 onClick={closeMenu}
               >
                 Home
               </Link>
               <Link
                 to="/products"
-                className={`nav-link-mobile ${isActive('/products') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
+                className={`nav-link-mobile ${
+                  isActive('/products')
+                    ? 'text-primary-300 bg-white/10'
+                    : 'text-gray-200 hover:text-primary-300 hover:bg-white/5'
+                }`}
                 onClick={closeMenu}
               >
                 Products
               </Link>
               <Link
                 to="/contact"
-                className={`nav-link-mobile ${isActive('/contact') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
+                className={`nav-link-mobile ${
+                  isActive('/contact')
+                    ? 'text-primary-300 bg-white/10'
+                    : 'text-gray-200 hover:text-primary-300 hover:bg-white/5'
+                }`}
                 onClick={closeMenu}
               >
                 Contact
               </Link>
               <Link
                 to="/cart"
-                className={`nav-link-mobile ${isActive('/cart') ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'}`}
+                className={`nav-link-mobile ${
+                  isActive('/cart')
+                    ? 'text-primary-300 bg-white/10'
+                    : 'text-gray-200 hover:text-primary-300 hover:bg-white/5'
+                }`}
                 onClick={closeMenu}
               >
                 Cart {items.length > 0 && `(${items.length})`}

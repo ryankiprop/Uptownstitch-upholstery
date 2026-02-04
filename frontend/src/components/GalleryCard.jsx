@@ -25,7 +25,7 @@ const GalleryCard = ({ item }) => {
         )}
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        <h3 className="text-lg font-semibold text-gray-100 mb-2">
           {item.title}
         </h3>
         {item.description && (

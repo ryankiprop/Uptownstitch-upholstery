@@ -25,10 +25,10 @@ const Checkout = () => {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-20">
-        <div className="max-w-2xl mx-auto px-4 py-12 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Checkout</h1>
-          <p className="text-gray-600 mb-8 text-lg">Your cart is empty</p>
+      <div className="min-h-screen pt-20 px-4">
+        <div className="max-w-2xl mx-auto py-12 text-center glass-panel px-8">
+          <h1 className="text-4xl font-bold text-white mb-4">Checkout</h1>
+          <p className="text-gray-200 mb-8 text-lg">Your cart is empty</p>
           <button
             onClick={() => navigate('/products')}
             className="btn-primary px-6 py-3 text-lg"
@@ -101,22 +101,22 @@ const Checkout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20 pb-12">
-      <div className="max-w-5xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Checkout</h1>
+    <div className="min-h-screen pt-20 pb-12 px-4">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-8">Checkout</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Checkout Form */}
           <form onSubmit={handleSubmit} className="lg:col-span-2 space-y-6">
             {/* Shipping Info */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="glass-panel p-6">
+              <h2 className="text-2xl font-bold text-white mb-6">
                 Shipping Information
               </h2>
 
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-200 mb-1">
                     First Name
                   </label>
                   <input
@@ -124,8 +124,8 @@ const Checkout = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.firstName ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                      errors.firstName ? 'border-red-400' : ''
                     }`}
                   />
                   {errors.firstName && (
@@ -133,7 +133,7 @@ const Checkout = () => {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-200 mb-1">
                     Last Name
                   </label>
                   <input
@@ -141,8 +141,8 @@ const Checkout = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.lastName ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                      errors.lastName ? 'border-red-400' : ''
                     }`}
                   />
                   {errors.lastName && (
@@ -152,7 +152,7 @@ const Checkout = () => {
               </div>
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-200 mb-1">
                   Email
                 </label>
                 <input
@@ -160,8 +160,8 @@ const Checkout = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                    errors.email ? 'border-red-400' : ''
                   }`}
                 />
                 {errors.email && (
@@ -170,7 +170,7 @@ const Checkout = () => {
               </div>
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-200 mb-1">
                   Phone
                 </label>
                 <input
@@ -178,8 +178,8 @@ const Checkout = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.phone ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                    errors.phone ? 'border-red-400' : ''
                   }`}
                 />
                 {errors.phone && (
@@ -188,7 +188,7 @@ const Checkout = () => {
               </div>
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-200 mb-1">
                   Address
                 </label>
                 <input
@@ -196,8 +196,8 @@ const Checkout = () => {
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.address ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                    errors.address ? 'border-red-400' : ''
                   }`}
                 />
                 {errors.address && (
@@ -207,7 +207,7 @@ const Checkout = () => {
 
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-200 mb-1">
                     City
                   </label>
                   <input
@@ -215,8 +215,8 @@ const Checkout = () => {
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.city ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                      errors.city ? 'border-red-400' : ''
                     }`}
                   />
                   {errors.city && (
@@ -224,7 +224,7 @@ const Checkout = () => {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-200 mb-1">
                     State
                   </label>
                   <input
@@ -232,8 +232,8 @@ const Checkout = () => {
                     name="state"
                     value={formData.state}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.state ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                      errors.state ? 'border-red-400' : ''
                     }`}
                   />
                   {errors.state && (
@@ -241,7 +241,7 @@ const Checkout = () => {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-200 mb-1">
                     ZIP Code
                   </label>
                   <input
@@ -249,8 +249,8 @@ const Checkout = () => {
                     name="zipCode"
                     value={formData.zipCode}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.zipCode ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                      errors.zipCode ? 'border-red-400' : ''
                     }`}
                   />
                   {errors.zipCode && (
@@ -261,13 +261,13 @@ const Checkout = () => {
             </div>
 
             {/* Payment Info */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="glass-panel p-6">
+              <h2 className="text-2xl font-bold text-white mb-6">
                 Payment Information
               </h2>
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-200 mb-1">
                   Cardholder Name
                 </label>
                 <input
@@ -275,8 +275,8 @@ const Checkout = () => {
                   name="cardName"
                   value={formData.cardName}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.cardName ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                    errors.cardName ? 'border-red-400' : ''
                   }`}
                 />
                 {errors.cardName && (
@@ -285,7 +285,7 @@ const Checkout = () => {
               </div>
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-200 mb-1">
                   Card Number
                 </label>
                 <input
@@ -295,8 +295,8 @@ const Checkout = () => {
                   value={formData.cardNumber}
                   onChange={handleChange}
                   maxLength="19"
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.cardNumber ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                    errors.cardNumber ? 'border-red-400' : ''
                   }`}
                 />
                 {errors.cardNumber && (
@@ -306,7 +306,7 @@ const Checkout = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-200 mb-1">
                     Expiry Date
                   </label>
                   <input
@@ -316,8 +316,8 @@ const Checkout = () => {
                     value={formData.expiryDate}
                     onChange={handleChange}
                     maxLength="5"
-                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.expiryDate ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                      errors.expiryDate ? 'border-red-400' : ''
                     }`}
                   />
                   {errors.expiryDate && (
@@ -325,7 +325,7 @@ const Checkout = () => {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-200 mb-1">
                     CVV
                   </label>
                   <input
@@ -335,8 +335,8 @@ const Checkout = () => {
                     value={formData.cvv}
                     onChange={handleChange}
                     maxLength="4"
-                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.cvv ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full px-4 py-2 glass-input focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                      errors.cvv ? 'border-red-400' : ''
                     }`}
                   />
                   {errors.cvv && (
@@ -349,7 +349,7 @@ const Checkout = () => {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary w-full py-3 text-lg font-semibold disabled:opacity-50"
+              className="btn-primary w-full py-3 text-lg font-semibold disabled:opacity-50 bg-primary-500/90 hover:bg-primary-400"
             >
               {loading ? 'Processing...' : 'Place Order'}
             </button>
@@ -357,38 +357,38 @@ const Checkout = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm p-6 sticky top-24">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <div className="glass-panel p-6 sticky top-24">
+              <h2 className="text-xl font-bold text-white mb-6">
                 Order Summary
               </h2>
 
               <div className="space-y-3 mb-6 max-h-64 overflow-y-auto">
                 {items.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
-                    <span className="text-gray-600">
+                    <span className="text-gray-200">
                       {item.name} x {item.quantity}
                     </span>
-                    <span className="font-medium text-gray-900">
+                    <span className="font-medium text-white">
                       ${(item.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="border-t border-gray-200 pt-4">
-                <div className="flex justify-between mb-2 text-gray-600">
+              <div className="border-t border-white/10 pt-4">
+                <div className="flex justify-between mb-2 text-gray-200">
                   <span>Subtotal</span>
                   <span>${total.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between mb-4 text-gray-600">
+                <div className="flex justify-between mb-4 text-gray-200">
                   <span>Shipping & Tax</span>
                   <span>Calculated</span>
                 </div>
               </div>
 
-              <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-                <span className="text-lg font-bold text-gray-900">Total</span>
-                <span className="text-2xl font-bold text-primary-600">
+              <div className="flex justify-between items-center pt-4 border-t border-white/10">
+                <span className="text-lg font-bold text-white">Total</span>
+                <span className="text-2xl font-bold text-primary-200">
                   ${total.toFixed(2)}
                 </span>
               </div>

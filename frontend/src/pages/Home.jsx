@@ -69,53 +69,60 @@ const Home = () => {
       <Hero />
 
       {/* Featured Products Section */}
-      <section className="py-16 bg-gray-50" aria-labelledby="featured-products">
+      <section className="py-16" aria-labelledby="featured-products">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 id="featured-products" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Featured Products
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Premium upholstery materials and kits for your restoration projects
-            </p>
-          </div>
-
-          {featuredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+          <div className="glass-panel px-8 py-10 md:py-12">
+            <div className="text-center mb-10">
+              <h2 id="featured-products" className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Featured Products
+              </h2>
+              <p className="text-xl text-gray-200/90 max-w-2xl mx-auto">
+                Premium upholstery materials and kits for your restoration projects
+              </p>
             </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-gray-500">No featured products available at the moment.</p>
-            </div>
-          )}
 
-          <div className="text-center">
-            <Link to="/products" className="btn-primary">
-              View All Products
-            </Link>
+            {featuredProducts.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                {featuredProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-gray-300">No featured products available at the moment.</p>
+              </div>
+            )}
+
+            <div className="text-center">
+              <Link to="/products" className="btn-primary bg-primary-500/90 hover:bg-primary-400">
+                View All Products
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-600 text-white" aria-labelledby="ready-to-transform">
-        <div className="container text-center">
-          <h2 id="ready-to-transform" className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Interior?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Get in touch with us today for a free consultation and quote on your upholstery project.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
-              Get Free Quote
-            </Link>
-            <Link to="/products" className="btn-outline border-white text-white hover:bg-white hover:text-primary-600">
-              View Our Products
-            </Link>
+      <section className="py-20" aria-labelledby="ready-to-transform">
+        <div className="container">
+          <div className="glass-panel px-8 py-12 text-center">
+            <h2 id="ready-to-transform" className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Ready to Transform Your Interior?
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-200">
+              Get in touch with us today for a free consultation and quote on your upholstery project.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact" className="btn-primary bg-white/90 text-primary-700 hover:bg-white">
+                Get Free Quote
+              </Link>
+              <Link
+                to="/products"
+                className="btn-outline border-white/80 text-white hover:bg-white hover:text-primary-700"
+              >
+                View Our Products
+              </Link>
+            </div>
           </div>
         </div>
       </section>
